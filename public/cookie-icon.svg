@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Cookie shape -->
+  <path d="M50 10C28 10 10 28 10 50s18 40 40 40 40-18 40-40S72 10 50 10z" fill="#D4AF37" stroke="#B8860B" stroke-width="2"/>
+  
+  <!-- Chocolate chips -->
+  <circle cx="35" cy="35" r="4" fill="#3C2410"/>
+  <circle cx="65" cy="35" r="4" fill="#3C2410"/>
+  <circle cx="50" cy="50" r="4" fill="#3C2410"/>
+  <circle cx="35" cy="65" r="4" fill="#3C2410"/>
+  <circle cx="65" cy="65" r="4" fill="#3C2410"/>
+  <circle cx="45" cy="30" r="3" fill="#3C2410"/>
+  <circle cx="55" cy="30" r="3" fill="#3C2410"/>
+  <circle cx="40" cy="55" r="3" fill="#3C2410"/>
+  <circle cx="60" cy="55" r="3" fill="#3C2410"/>
+  <circle cx="50" cy="70" r="3" fill="#3C2410"/>
+  <circle cx="30" cy="50" r="3" fill="#3C2410"/>
+  <circle cx="70" cy="50" r="3" fill="#3C2410"/>
+</svg>

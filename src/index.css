@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 25 40% 8%;
+    --foreground: 45 30% 95%;
+
+    --card: 25 35% 12%;
+    --card-foreground: 45 30% 95%;
+
+    --popover: 25 35% 12%;
+    --popover-foreground: 45 30% 95%;
+
+    --primary: 45 75% 55%;
+    --primary-foreground: 25 40% 8%;
+
+    --secondary: 25 30% 20%;
+    --secondary-foreground: 45 30% 95%;
+
+    --muted: 25 20% 25%;
+    --muted-foreground: 45 15% 65%;
+
+    --accent: 45 80% 60%;
+    --accent-foreground: 25 40% 8%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 45 30% 95%;
+
+    --border: 25 25% 18%;
+    --input: 25 25% 18%;
+    --ring: 45 75% 55%;
+
+    --radius: 0.75rem;
+
+    --gradient-chocolate: linear-gradient(135deg, hsl(25 40% 8%), hsl(25 35% 12%));
+    --gradient-gold: linear-gradient(135deg, hsl(45 75% 55%), hsl(45 85% 65%));
+    --gradient-hero: linear-gradient(to bottom, hsla(25 40% 8% / 0.7), hsla(25 40% 8% / 0.95));
+    
+    --shadow-glow: 0 0 30px hsla(45 75% 55% / 0.3);
+    --shadow-elegant: 0 10px 40px hsla(0 0% 0% / 0.5);
+    
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+  .text-gradient-gold {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+
+  .hover-lift {
+    @apply transition-all duration-300 hover:scale-105 hover:shadow-2xl;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
