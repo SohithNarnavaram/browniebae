@@ -180,30 +180,31 @@ export const Cart = () => {
     </AlertDialog>
 
     <Dialog open={isCheckoutDialogOpen} onOpenChange={setIsCheckoutDialogOpen}>
-      <DialogContent className="sm:max-w-[500px]">
-        <DialogHeader>
-          <DialogTitle className="text-2xl font-serif text-gradient-gold">
+      <DialogContent className="sm:max-w-[540px] max-h-[90vh] overflow-y-auto p-4 sm:p-6 gap-4">
+        <DialogHeader className="space-y-3">
+          <DialogTitle className="text-xl sm:text-2xl font-serif text-gradient-gold">
             Checkout Details
           </DialogTitle>
-          <DialogDescription>
+          <DialogDescription className="text-sm sm:text-base">
             Please fill in your details to complete your order
           </DialogDescription>
         </DialogHeader>
         
-        <div className="space-y-4 py-4">
+        <div className="space-y-4 sm:space-y-5">
           <div className="space-y-2">
-            <Label htmlFor="name">Name *</Label>
+            <Label htmlFor="name" className="text-sm font-semibold">Name *</Label>
             <Input
               id="name"
               placeholder="Enter your name"
               value={customerName}
               onChange={(e) => setCustomerName(e.target.value)}
               required
+              className="h-10 sm:h-11"
             />
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="mobile">Mobile Number *</Label>
+            <Label htmlFor="mobile" className="text-sm font-semibold">Mobile Number *</Label>
             <Input
               id="mobile"
               type="tel"
@@ -211,11 +212,12 @@ export const Cart = () => {
               value={mobileNumber}
               onChange={(e) => setMobileNumber(e.target.value)}
               required
+              className="h-10 sm:h-11"
             />
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="address">Delivery Address *</Label>
+            <Label htmlFor="address" className="text-sm font-semibold">Delivery Address *</Label>
             <Textarea
               id="address"
               placeholder="Enter your delivery address"
@@ -223,33 +225,36 @@ export const Cart = () => {
               onChange={(e) => setAddress(e.target.value)}
               rows={3}
               required
+              className="resize-none"
             />
           </div>
           
           <div className="space-y-2">
-            <Label htmlFor="message">Custom Message (Optional)</Label>
+            <Label htmlFor="message" className="text-sm font-semibold">Custom Message (Optional)</Label>
             <Textarea
               id="message"
               placeholder="Any special instructions or preferences?"
               value={customMessage}
               onChange={(e) => setCustomMessage(e.target.value)}
-              rows={3}
+              rows={2}
+              className="resize-none"
             />
           </div>
         </div>
         
-        <div className="flex gap-3 justify-between">
+        <div className="flex flex-col sm:flex-row gap-3 pt-2">
           <Button
             variant="outline"
             onClick={() => setIsCheckoutDialogOpen(false)}
+            className="w-full sm:w-auto order-last sm:order-first"
           >
             Cancel
           </Button>
-          <div className="flex gap-2">
+          <div className="flex flex-col sm:flex-row gap-2 sm:gap-2 w-full sm:w-auto sm:flex-1">
             <Button
               variant="default"
               onClick={handleInstagramCheckout}
-              className="rounded-full bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700"
+              className="w-full rounded-full bg-gradient-to-r from-pink-500 to-purple-600 hover:from-pink-600 hover:to-purple-700 h-10 sm:h-11"
             >
               <Instagram className="w-4 h-4 mr-2" />
               Instagram
@@ -257,7 +262,7 @@ export const Cart = () => {
             <Button
               variant="hero"
               onClick={handleSubmitOrder}
-              className="rounded-full"
+              className="w-full rounded-full h-10 sm:h-11"
             >
               <Send className="w-4 h-4 mr-2" />
               WhatsApp
