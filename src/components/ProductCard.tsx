@@ -24,9 +24,16 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         <img
           src={product.image}
           alt={product.name}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background/95 via-background/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-background/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 ease-out"></div>
+        {product.isBestSeller && (
+          <div className="absolute top-2 right-2 px-3 py-1">
+            <span className="text-white font-serif font-semibold text-sm md:text-base drop-shadow-lg">
+              Best Sellers
+            </span>
+          </div>
+        )}
         <div className="absolute bottom-2 right-2 px-2 py-0.5 md:px-3 md:py-1 bg-primary rounded-full">
           <span className="text-primary-foreground font-bold text-xs md:text-sm">Rs. {product.price}</span>
         </div>

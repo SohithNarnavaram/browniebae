@@ -5,6 +5,7 @@ export interface Product {
   image: string;
   category: "brownie" | "box" | "tub";
   description?: string;
+  isBestSeller?: boolean;
 }
 
 export interface CartItem extends Product {

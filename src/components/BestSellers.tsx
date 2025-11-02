@@ -4,12 +4,17 @@ import { Badge } from "@/components/ui/badge";
 import { Star } from "lucide-react";
 
 export const BestSellers = () => {
-  const bestSellers = products.filter(
-    (p) =>
-      p.id === "triple-chocolate" ||
-      p.id === "belgian-stuffed" ||
-      p.id === "nutella"
-  );
+  // Get one best seller from each category
+  const brownieBestSellers = products.filter(p => p.category === "brownie" && p.isBestSeller);
+  const boxBestSellers = products.filter(p => p.category === "box" && p.isBestSeller);
+  const tubBestSellers = products.filter(p => p.category === "tub" && p.isBestSeller);
+  
+  // Randomly select one from each category
+  const randomBrownie = brownieBestSellers[Math.floor(Math.random() * brownieBestSellers.length)];
+  const randomBox = boxBestSellers[Math.floor(Math.random() * boxBestSellers.length)];
+  const randomTub = tubBestSellers[Math.floor(Math.random() * tubBestSellers.length)];
+  
+  const bestSellers = [randomBrownie, randomBox, randomTub].filter(Boolean);
 
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8 bg-background">
