@@ -71,7 +71,7 @@ This project can be deployed to any static hosting service:
 ## 📱 Contact
 
 - **Phone**: +91 6366 322 338
-- **Email**: hello@browniebae.co
+- **Email**: browniebae.co@gmail.com
 - **Instagram**: [@browniebae_co](https://www.instagram.com/browniebae_co)
 - **Location**: Bengaluru, Karnataka
 
